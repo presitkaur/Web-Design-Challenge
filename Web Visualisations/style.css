@@ -1,11 +1,11 @@
 body{
-    background-color: rgb(45, 45, 49);
+    background-color: rgb(42, 42, 44);
     font-family:  'Oswald', sans-serif;
 }
 
 p {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:white
+    color:white;
 }
 
 h3, h5 {
@@ -31,6 +31,9 @@ ul > li {
     *display:inline;
 }
 
+.title{
+    color: rgb(174, 139, 211)
+}
 
 .navbar{
     max-height: 70px;
@@ -62,7 +65,6 @@ ul > li {
     color:  rgb(30, 30, 34) !important;
 }
 
-
 .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
     background-color:#E7E7E7 !important; 
 }
@@ -80,8 +82,8 @@ color: rgb(175, 175, 175) !important;
 }
 
 img{ 
-    width:100%;
-    height:100%;
+    width: 100%;
+    height:90%;
 }
 
 .active, .panel:hover{
@@ -126,3 +128,75 @@ img{
         
         }
     }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    /* Opera < 12.1 */
+    @-o-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+.container {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+.hvr {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container:hover .hvr {
+    opacity: 0.3;
+  }
+  
+  .container:hover .middle {
+    opacity: 1;
+  }
+  
+  .hvrtext {
+    background-color: rgb(150, 95, 209);
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
